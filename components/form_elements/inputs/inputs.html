@@ -1,0 +1,110 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Inputs</title>
+  <link rel="stylesheet" href="/assets/css/vars.css" type="text/css">
+  <link rel="stylesheet" href="/assets/css/styles.css" type="text/css">
+</head>
+
+<body>
+  <div id="wrapper">
+    <!-- Header -->
+    <header>
+      <!-- Burger Button -->
+      <button [ngClass]="{ burgerVertical: menuMobile, burgerHorizontal: !menuMobile }">
+        <img src="/assets/img/burger.svg" alt="Mobile Button (Open Menu)" />
+      </button>
+
+      <!-- Logo -->
+      <h1>
+        <a href="/" class="logo">
+          <picture>
+            <source srcset="/assets/img/creamNG-logo.svg" media="(min-width:1000px)" />
+            <img src="/assets/img/creamNG-logo-sml.svg" alt="Cream-NG, your accessible Angular Lib" />
+          </picture>
+        </a>
+      </h1>
+
+      <!-- MENU -->
+      <nav class="primary-nav">
+        <ul class="accordion"><li class="menu-group closed">
+
+            <button class="panel-heading" aria-expanded="false" aria-controls="sousMenuforms"
+              id="itemMenuforms">
+              <svg>
+                <use xlink:href="/assets/img/icons.svg#forms"></use>
+              </svg>
+              Form elements
+            </button>
+
+            <div class="panel-collapse" aria-hidden="true" id="sousMenuforms"
+              aria-labeledby="itemMenuforms">
+              <ul class="contenuMenu">
+                <li>
+                  <a href="/components/form_elements/buttons/buttons1.html">Buttons</a>
+                </li>
+                <li>
+                  <a href="/components/form_elements/checkboxes/checkboxes.html">Checkboxes</a>
+                </li>
+                <li>
+                  <a href="/components/form_elements/datepicker/datepicker.html">Datepicker</a>
+                </li>
+                <li>
+                  <a href="/components/form_elements/fieldset/fieldset.html">Fieldset</a>
+                </li>
+                <li>
+                  <a href="/components/form_elements/inputs/inputs.html">Inputs</a>
+                </li>
+                <li>
+                  <a href="/components/form_elements/checkboxes/checkboxes.html">Checkboxes</a>
+                </li>
+                <li>
+                  <a href="/components/form_elements/radios/radios.html">Radios</a>
+                </li>
+                <li>
+                  <a href="/components/form_elements/sliders/sliders.html">Sliders & Progress</a>
+                </li>
+                <li>
+                  <a href="/components/form_elements/selects/selects.html">Selects & Datalist</a>
+                </li></ul>
+            </div>
+
+          </li><li class="menu-group closed">
+
+            <button class="panel-heading" aria-expanded="false" aria-controls="sousMenunavigation"
+              id="itemMenunavigation">
+              <svg>
+                <use xlink:href="/assets/img/icons.svg#navigation"></use>
+              </svg>
+              Navigation
+            </button>
+
+            <div class="panel-collapse" aria-hidden="true" id="sousMenunavigation"
+              aria-labeledby="itemMenunavigation">
+              <ul class="contenuMenu">
+                <li>
+                  <a href="/components/navigation/breadcrumbs/breadcrumbs.html">Breadcrumbs</a>
+                </li></ul>
+            </div>
+
+          </li></ul>
+      </nav>
+    </header>
+
+    <main>
+      <div class="contentMain">
+        <div class="wrapper">
+  <h3>Inputs</h3>
+</div>
+      </div>
+    </main>
+  </div>
+  <script type="text/javascript" src="/assets/js/main.js"></script>
+  <script type="text/javascript" src="/assets/js/classlist-polyfill-IE.js"></script>
+</body>
+
+</html>
