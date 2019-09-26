@@ -119,6 +119,7 @@ html {
 /* ----------- DEFAULTS ----------------- */
 
 body {
+  height: 100%;
   font: 100%/1.2 var(--stack);
   color: var(--body-text);
   background-color: var(--body-bg);
@@ -896,6 +897,7 @@ c3m-tabs li.L9 {
   #wrapper {
     display: flex;
     flex-wrap: wrap;
+    height: 100%;
   }
 
   header {
