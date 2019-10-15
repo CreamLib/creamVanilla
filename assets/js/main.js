@@ -39,6 +39,37 @@ function init_menu() {
   }
 }
 
+
+var tabs = function (domNode) {
+  this.domNode = domNode;
+};
+
+tabs.prototype.init = function () {
+  let listeTabs = this.domNode.getElementsByTagName('li');
+  for (let i = 0; i < listeTabs.length; i++) {
+    let buttonTabs = listeTabs[i].getElementsByTagName('button')[0];
+    buttonTabs.addEventListener('click', this.clickTab.bind(this));
+  }
+};
+
+tabs.prototype.clickTab = function (event) {
+  let buttonClicked = event.target;
+  let idTabToActivate = buttonClicked.getAttribute('aria-controls');
+  let tabActivated = this.domNode.getElementsByClassName('content');
+  for (var j = 0; j < tabActivated.length; j++) {
+    if (tabActivated[j].getAttribute('aria-hidden') == 'false') {
+      tabActivated[j].setAttribute('aria-hidden', true);
+      let idButtonActivated = tabActivated[j].getAttribute('aria-labeledby');
+      let buttonActivated = this.domNode.querySelector('#' + idButtonActivated);
+      buttonActivated = buttonActivated.parentNode;
+      buttonActivated.classList.remove('active');
+    }
+  }
+  let tabToActivate = this.domNode.querySelector('#' + idTabToActivate);
+  tabToActivate.setAttribute('aria-hidden', false);
+  buttonClicked.parentNode.classList.add('active');
+};
+
 document.addEventListener('DOMContentLoaded', function () {
   /* Menu */
   itemMenuOpen = 0;
@@ -46,5 +77,13 @@ document.addEventListener('DOMContentLoaded', function () {
     init_menu();
   }
 
+  /* Tabs Panel */
+  if (document.getElementsByClassName('tabsContainer').length != 0) {
+    let tabsContainers = document.getElementsByClassName('tabsContainer');
+    for (var i = 0; i < tabsContainers.length; i++) {
+      let tabsContainer = new tabs(tabsContainers[i]);
+      tabsContainer.init();
+    }
+  }
 
 });
