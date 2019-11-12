@@ -52,3 +52,361 @@
 .ui-buttons .icon-add {
   background-position: 0.5em -242px;
 }
+
+/*****************************/
+/********* CHECKBOX **********/
+/*****************************/
+.ui-checkboxes label {
+  display: inline-block;
+  font-family: var(--stack-b);
+  padding: 0 0 0 0.5em;
+}
+
+.ui-checkboxes.unstressed label {
+  font-family: var(--stack);
+}
+
+/* ---- CUSTOM CHECKBOX ----- */
+/* Hide the checkbox */
+.ui-checkboxes.custom input[type='checkbox']:not(:checked),
+.ui-checkboxes.custom input[type='checkbox']:checked {
+  position: absolute;
+  left: -9999px;
+}
+
+/* move the label */
+.ui-checkboxes.custom input[type='checkbox']:not(:checked) + label,
+.ui-checkboxes.custom input[type='checkbox']:checked + label {
+  position: relative;
+  padding-left: 25px;
+}
+
+/* Design a new checkbox */
+.ui-checkboxes.custom input[type='checkbox']:not(:checked) + label:before,
+.ui-checkboxes.custom input[type='checkbox']:checked + label:before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: -0.2em;
+  width: 17px;
+  height: 17px;
+  border: 1px solid var(--n-medium);
+  background: var(--n-light);
+  border-radius: 3px;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+/* Design a new validate icon for checkbox */
+.ui-checkboxes.custom input[type='checkbox']:not(:checked) + label:after,
+.ui-checkboxes.custom input[type='checkbox']:checked + label:after {
+  content: '✔';
+  position: absolute;
+  top: -0.2em;
+  left: 4px;
+  font-size: 16px;
+  color: var(--sec-color);
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+  margin-top: 0.2rem;
+  margin-left: 0;
+}
+/* Design if checkbox isn't checked */
+.ui-checkboxes.custom input[type='checkbox']:not(:checked) + label:after {
+  opacity: 0;
+  transform: scale(0);
+}
+
+/* Design if checkbox is checked */
+.ui-checkboxes.custom input[type='checkbox']:checked + label:after {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Design if checkbox is focused */
+.ui-checkboxes.custom input[type='checkbox']:checked:focus + label:before,
+.ui-checkboxes.custom input[type='checkbox']:not(:checked):focus + label:before {
+  border: 1px dotted var(--sec-color);
+}
+
+/* ------------- ON-OFF BUTTON ---------------- */
+
+.ui-checkboxes.on-off {
+  position: relative;
+}
+.ui-checkboxes.on-off label {
+  display: inline-block;
+  margin-left: 40px;
+  cursor: pointer;
+}
+
+.ui-checkboxes.on-off input {
+  position: relative;
+  left: 15px;
+  opacity: 0;
+}
+
+.ui-checkboxes.on-off label::before {
+  display: block;
+  position: absolute;
+  width: 50px;
+  height: 25px;
+  left: 0;
+  content: '';
+  background-color: var(--n-medium);
+  border-radius: 1rem;
+}
+
+.ui-checkboxes.on-off label::after {
+  display: block;
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  top: 0.135em;
+  left: 27px;
+  content: '';
+  background-color: var(--n-medium-a);
+  border-radius: 20px;
+  transition: all 1s;
+}
+
+.ui-checkboxes.on-off input:checked + label::before {
+  background: var(--main-light);
+}
+
+.ui-checkboxes.on-off input:checked + label::after {
+  left: 2px;
+  background: var(--body-bg);
+}
+
+/* ------------- @MEDIA ---------------- */
+
+@media screen and (min-width: 750px) {
+  .ui-checkboxes.custom input[type='checkbox']:not(:checked) + label:after,
+  .ui-checkboxes.custom input[type='checkbox']:checked + label:after {
+    top: -0.1em;
+  }
+  .ui-checkboxes.custom input[type='checkbox']:not(:checked) + label:before,
+  .ui-checkboxes.custom input[type='checkbox']:checked + label:before {
+    top: 0;
+  }
+}
+
+/***********************************/
+/********* CHECKBOX-GROUP **********/
+/***********************************/
+.ui-checkbox-groups {
+  margin-bottom: 1rem;
+}
+
+.ui-checkbox-groups legend {
+  font: 1em/1 var(--stack-b);
+  padding-bottom: 1em;
+}
+
+.ui-checkbox-groups label {
+  display: inline-block;
+  font-family: var(--stack);
+  padding: 0 0 0 0.5em;
+}
+.ui-checkbox-groups li {
+  margin-top: 0.5em;
+}
+
+/* Single line options */
+.ui-checkbox-groups.go-along ul {
+  display: flex;
+}
+.ui-checkbox-groups.go-along li {
+  margin: 0 0 0 1em;
+}
+
+/* ------------- @MEDIA ---------------- */
+
+@media screen and (min-width: 750px) {
+  .ui-checkbox-groups legend {
+    font-size: 1.3em;
+  }
+}
+
+/***********************************/
+/********** CHECKBOX-LINK **********/
+/***********************************/
+.ui-checkboxes.checkbox-link label {
+  font-family: var(--stack);
+}
+
+/*************************************/
+/********** CHECKBOX-BUTTON **********/
+/*************************************/
+/* Label styled as a button */
+.ui-checkbox-button label {
+  display: inline-block;
+  overflow: hidden;
+}
+
+/* Style of Button */
+.ui-checkbox-button label span {
+  display: inline-block;
+  text-align: center;
+  padding: 0.6em 0.5em 0.5em;
+  border: 1px solid var(--n-dark);
+  cursor: pointer;
+}
+
+/* Hover */
+.ui-checkbox-button label span:hover {
+  color: var(--text-inv);
+  background-color: var(--main-color);
+  border-color: var(--main-color);
+}
+
+/* Hide Input */
+.ui-checkbox-button label input {
+  position: relative;
+  left: -5em;
+}
+
+/* Style of Button is Checked */
+.ui-checkbox-button input:checked + span {
+  color: var(--text-inv);
+  background-color: var(--main-color);
+  border-color: var(--main-color);
+}
+
+/******************************/
+/********** FIELDSET **********/
+/******************************/
+fieldset.ui-fieldset {
+  padding: 1rem;
+  border: 2px solid var(--main-light);
+}
+
+/* Legend */
+fieldset.ui-fieldset > legend {
+  text-transform: uppercase;
+  letter-spacing: 1.1px;
+  color: var(--main-color);
+  padding: 0 0.5rem;
+  margin-left: 0.5rem;
+}
+
+/***************************/
+/********** INPUT **********/
+/***************************/
+.ui-input:invalid {
+  border: 2px solid #FC3333;
+}
+
+.ui-input.required label {
+  background-image: url(/assets/img/mandatory.svg);
+  background-repeat: no-repeat;
+  padding-left: 20px;
+}
+
+.ui-input.url input, .ui-input.mail input, .ui-input.tel input {
+  width: 85%;
+  max-width: 22em;
+}
+
+/* ---- INPUT SEARCH ----- */
+.ui-input.search button {
+  vertical-align: bottom;
+}
+
+.ui-input.search circle {
+  fill: var(--main-color);
+}
+
+.ui-input.search button:hover circle,
+.ui-input.search button:focus circle {
+  fill: var(--sec-color);
+}
+
+/* --- INPUT ERROR MSG ---*/
+.error-msg {
+  font-family: var(--stack-b);
+  color: var(--alert-color);
+  margin-bottom: 0.8rem;
+}
+.error-msg svg {
+  fill: var(--alert-color);
+  vertical-align: -0.2em;
+}
+
+/***************************/
+/********** RADIO **********/
+/***************************/
+.ui-radio-group {
+  margin-bottom: 1rem;
+}
+
+.ui-radio-group legend {
+  font: 1em/1 var(--stack-b);
+  padding-bottom: 1em;
+}
+
+.ui-radio-group label {
+  display: inline-block;
+  font-family: var(--stack);
+  padding: 0 0 0 0.5em;
+}
+
+/* Single line options */
+.ui-radio-group.go-along ul {
+  display: flex;
+}
+.ui-radio-group.go-along .ui-radio + .ui-radio {
+  margin-left: 2em;
+}
+
+/* Radio buttons */
+
+.ui-radio-group.switch {
+  display: flex;
+  position: relative;
+}
+
+.ui-radio-group.switch li {
+  display: inline-block;
+}
+
+.ui-radio-group.switch input {
+  position: absolute;
+  width: 25px;
+  left: -35px;
+  opacity: 0;
+}
+
+.ui-radio-group.switch .ui-radio label {
+  display: inline-block;
+  overflow: hidden;
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  color: var(--n-dark);
+  background: var(--n-medium);
+  padding: 0.65em 0.8em 0.5em;
+  margin-left: -4px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  transition: all 0.5s;
+  cursor: pointer;
+}
+.ui-radio-group.switch .ui-radio:first-child label {
+  border-top-left-radius: 0.3em;
+  border-bottom-left-radius: 0.3em;
+  margin-left: 0;
+}
+.ui-radio-group.switch .ui-radio:last-child label {
+  border-top-right-radius: 0.3em;
+  border-bottom-right-radius: 0.3em;
+}
+
+.ui-radio-group.switch input:checked + label {
+  color: var(--text-inv);
+  background-color: var(--main-color);
+}
+
+@media screen and (min-width: 750px) {
+  .ui-radio-group legend {
+    font-size: 1.3em;
+  }
+}

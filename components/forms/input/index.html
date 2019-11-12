@@ -1,0 +1,674 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CreamJS - Input Component</title>
+    <meta name="Description" content="This is the input component">
+    <link rel="stylesheet" href="/assets/css/styles.css">
+    <link rel="stylesheet" href="/assets/css/librairie.css">
+  </head>
+
+
+<body>
+  <div id="wrapper">
+<header>
+      <!-- Burger Button -->
+      <button [ngClass]="{ burgerVertical: menuMobile, burgerHorizontal: !menuMobile }">
+        <img src="/assets/img/burger.svg" alt="Mobile Button (Open Menu)" />
+      </button>
+
+      <!-- Logo -->
+      <h1>
+        <a href="/" class="logo">
+          <picture>
+            <source srcset="/assets/img/creamJS-logo.svg" media="(min-width:1000px)" />
+            <img src="/assets/img/creamNG-logo-sml.svg" alt="Cream-NG, your accessible Angular Lib" />
+          </picture>
+        </a>
+      </h1>
+
+      <!-- MENU -->
+      <nav class="primary-nav">
+        <ul class="accordion"><li class="menu-group closed">
+
+            <button class="panel-heading" aria-expanded="false" aria-controls="sousMenuforms"
+              id="itemMenuforms">
+              <svg>
+                <use xlink:href="/assets/img/icons.svg#forms"></use>
+              </svg>
+              Form elements
+            </button>
+
+            <div class="panel-collapse" aria-hidden="true" id="sousMenuforms"
+              aria-labeledby="itemMenuforms">
+              <ul class="contenuMenu">
+                <li>
+                  <a href="/components/forms/buttons/">Buttons &amp; Controls</a>
+                </li>
+                <li>
+                  <a href="/components/forms/datepicker/">datepicker component</a>
+                </li>
+                <li>
+                  <a href="/components/forms/checkboxes/">checkboxes component</a>
+                </li>
+                <li>
+                  <a href="/components/forms/fieldset/">Fieldset Component</a>
+                </li>
+                <li>
+                  <a href="/components/forms/input/">Input Component</a>
+                </li>
+                <li>
+                  <a href="/components/forms/radio/">Radio Component</a>
+                </li></ul>
+            </div>
+
+          </li><li class="menu-group closed">
+
+            <button class="panel-heading" aria-expanded="false" aria-controls="sousMenunavigation"
+              id="itemMenunavigation">
+              <svg>
+                <use xlink:href="/assets/img/icons.svg#navigation"></use>
+              </svg>
+              Navigation elements
+            </button>
+
+            <div class="panel-collapse" aria-hidden="true" id="sousMenunavigation"
+              aria-labeledby="itemMenunavigation">
+              <ul class="contenuMenu">
+                <li>
+                  <a href="/components/navigation/breadcrumbs/">Breadcrumbs component</a>
+                </li></ul>
+            </div>
+
+          </li><li class="menu-group closed">
+
+            <button class="panel-heading" aria-expanded="false" aria-controls="sousMenusvg5"
+              id="itemMenusvg5">
+              <svg>
+                <use xlink:href="/assets/img/icons.svg#svg5"></use>
+              </svg>
+              Utilities elements
+            </button>
+
+            <div class="panel-collapse" aria-hidden="true" id="sousMenusvg5"
+              aria-labeledby="itemMenusvg5">
+              <ul class="contenuMenu"></ul>
+            </div>
+
+          </li><li class="menu-group closed">
+
+            <button class="panel-heading" aria-expanded="false" aria-controls="sousMenusvg5"
+              id="itemMenusvg5">
+              <svg>
+                <use xlink:href="/assets/img/icons.svg#svg5"></use>
+              </svg>
+              Page structure
+            </button>
+
+            <div class="panel-collapse" aria-hidden="true" id="sousMenusvg5"
+              aria-labeledby="itemMenusvg5">
+              <ul class="contenuMenu"></ul>
+            </div>
+
+          </li></ul>
+      </nav>
+    </header>
+
+    <main>
+      <div class="contentMain">
+        <h2>Input Component</h2>
+
+
+<!-- Component Page Title -->
+<div class="panelTitle">
+    <ul>
+        <li><a href="#input">Regular Text Input</a></li>
+        <li><a href="#input-search">Search Input</a></li>
+        <li><a href="#input-tel">Phone Input</a></li>
+        <li><a href="#input-mail">E-mail Input</a></li>
+        <li><a href="#input-url">URL Input</a></li>
+        <li><a href="#input-password">Password Input</a></li>
+        <li><a href="#input-error-msg">Contextual Error Message</a></li>
+    </ul>
+</div>
+
+<!-- Component Title -->
+<div class="titleComponent">
+    <!-- INPUT REGULAR -->
+    <div class="descriptionComponent" id="input">
+        <h3>Regular Text Input</h3>
+        <div class="demo">
+            <p class="ui-input">
+                <label for="name1">Enter your name</label>
+                <input type="text" id="name1" name="name1" placeholder="a placeholder">
+            </p>
+        </div>
+
+        <div class="explain">
+            <dl>
+                <div>
+                    <dt>type</dt>
+                    <dd>The type of the Input</dd>
+                </div>
+                <div>
+                    <dt>id</dt>
+                    <dd>Input's general idetnifier</dd>
+                </div>
+                <div>
+                    <dt>value</dt>
+                    <dd>Input's current value (optional)</dd>
+                </div>
+                <div>
+                    <dt>for</dt>
+                    <dd>Label attribute. Must be the same of the id</dd>
+                </div>
+                <div>
+                    <dt>autocomplete</dt>
+                    <dd>Defaults to "on" (optional)</dd>
+                </div>
+                <div>
+                    <dt>maxlength</dt>
+                    <dd>The maximum allowed value length (optional)</dd>
+                </div>
+                <div>
+                    <dt>disabled</dt>
+                    <dd>When present, the element is disabled/read-only (optional)</dd>
+                </div>
+                <div>
+                    <dt>placeholder</dt>
+                    <dd>Placeholder value (optional)</dd>
+                </div>
+            </dl>
+
+            <div class="tip">
+                <svg width="40" height="40">
+                    <use href="/assets/img/icons.svg#tip" />
+                </svg>
+                <div class="content">
+                    <p>The <code>id</code> attribute of an input is very important for form accessibility. It allows
+                        the user-agent to associate a label to its input.</p>
+                    <p><code>Placeholders</code> don't replace labels; they should give hints on how to fill the input.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mandatory Input -->
+        <h4>Mandatory field (need <code>libraire.js</code>)</h4>
+        <div class="demo">
+            <p class="ui-input">
+                <label for="name2">Enter your name</label>
+                <input type="text" id="name2" name="name2" placeholder="a placeholder" required>
+            </p>
+        </div>
+
+        <!-- Disabled input -->
+        <h4>Disabled field (need <code>libraire.js</code>)</h4>
+        <div class="demo">
+            <p class="ui-input">
+                <label for="name3">Enter your name</label>
+                <input type="text" id="name3" name="name3" placeholder="a placeholder" disabled>
+            </p>
+        </div>
+
+        <!-- CODE SNIPPETS -->
+        <div class="snippets">
+            <div class="tabsContainer">
+                <ul class="buttons-bar">
+                    <li class="over active">
+                        <button id="tab01_01" aria-controls="tab01_01_content">HTML</button>
+                    </li>
+                    <li class="over">
+                        <button id="tab01_02" aria-controls="tab01_02_content">CSS</button>
+                    </li>
+                </ul>
+                <div class="content" aria-hidden="false" aria-labeledby="tab01_01" id="tab01_01_content">
+                    <div class="code">
+                        <!--?prettify lang=html linenums=true?-->
+                        <pre class="prettyprint linenums">
+              <code>
+              &lt!-- Regular Input --&gt;
+              &lt;p class="ui-input"&gt;
+                &lt;label for="name1"&gt;Enter your name&lt;/label&gt;
+                &lt;input type="text" id="name1" name="name1" placeholder="a placeholder"&gt;
+              &lt;/p&gt;
+
+              &lt!-- Mandatory Input --&gt;
+              &lt;p class="ui-input"&gt;
+                &lt;label for="name2"&gt;Enter your name&lt;/label&gt;
+                &lt;input type="text" id="name2" name="name2" placeholder="a placeholder" required&gt;
+              &lt;/p&gt;
+
+              &lt!-- Disabled Input --&gt;
+              &lt;p class="ui-input"&gt;
+                &lt;label for="name3"&gt;Enter your name&lt;/label&gt;
+                &lt;type="text" id="name3" name="name3" placeholder="a placeholder" disabled&gt;
+              &lt;/p&gt;
+              </code>
+            </pre>
+                    </div>
+                </div>
+                <div class="content" aria-hidden="true" aria-labeledby="tab01_02" id="tab01_02_content">
+                    <div _ngcontent-c18="" class="code">
+                        <pre _ngcontent-c18="" class="prettyprint linenums prettyprinted" style="">
+                .toto &#123;
+                  color: #FFF;
+                &#125;
+              </pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- INPUT SEARCH -->
+    <div class="descriptionComponent" id="input-search">
+        <h3>Search Input</h3>
+        <div class="demo">
+            <p class="ui-input search" role="search">
+                <label for="main-search">Search the site</label>
+                <input type="search" id="main-search" name="main-search" autocomplete="on">
+                <button type="submit">
+                    <svg width="35" height="35" viewBox="0 0 35 35" aria-labelledby="searchTitId">
+                        <title id="searchTitId">Perform search</title>
+                        <circle cx="17.5" cy="17.5" r="17.5" />
+                        <g>
+                            <path
+                                d="M19.12,19a7,7,0,1,1-.61-10A7.05,7.05,0,0,1,19.12,19ZM9.65,10.59a5.59,5.59,0,1,0,7.89-.49A5.6,5.6,0,0,0,9.65,10.59Z"
+                                style="fill: #fff" />
+                            <rect x="18.15" y="18.98" width="3.64" height="1.46" rx="0.73" ry="0.73"
+                                transform="translate(-8.02 21.63) rotate(-48.54)" style="fill: #fff" />
+                            <rect x="23.01" y="18.96" width="2.19" height="8.78" rx="1" ry="1"
+                                transform="translate(-9.36 25.96) rotate(-48.54)" style="fill: #fff" />
+                        </g>
+                    </svg>
+                </button>
+            </p>
+        </div>
+        <div class="explain">
+            <p>The input type <code>search</code> will inherit all attributes from the generic <code>input</code>
+                element.</p>
+        </div>
+
+        <!-- CODE SNIPPETS -->
+        <div class="snippets">
+            <div class="tabsContainer">
+                <ul class="buttons-bar">
+                    <li class="over active">
+                        <button id="tab02_01" aria-controls="tab02_01_content">HTML</button>
+                    </li>
+                    <li class="over">
+                        <button id="tab02_02" aria-controls="tab02_02_content">CSS</button>
+                    </li>
+                </ul>
+                <div class="content" aria-hidden="false" aria-labeledby="tab02_01" id="tab02_01_content">
+                    <div class="code">
+                        <!--?prettify lang=html linenums=true?-->
+                        <pre class="prettyprint linenums">
+                          <code>
+                          &lt!-- SEARCH INPUT --&gt;
+                          &lt;p class="ui-input search" role="search"&gt;
+                            &lt;label for="main-search"&gt;Search the site&lt;/label&gt;
+                            &lt;input type="search" id="main-search" name="main-search" autocomplete="on"&gt;
+                            &lt;button type="submit"&gt;&lt!-- Insert an img or text--&gt;&lt;/button&gt;
+                          &lt;/p&gt;
+                          </code>
+                        </pre>
+                    </div>
+                </div>
+                <div class="content" aria-hidden="true" aria-labeledby="tab02_02" id="tab02_02_content">
+                    <div _ngcontent-c18="" class="code">
+                        <pre _ngcontent-c18="" class="prettyprint linenums prettyprinted" style="">
+                            .toto &#123;
+                              color: #FFF;
+                            &#125;
+                          </pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- INPUT PHONE -->
+    <div class="descriptionComponent" id="input-tel">
+        <h3>Phone Input</h3>
+        <div class="demo">
+            <!-- INPUT PHONE -->
+            <p class="ui-input tel">
+                <label for="phoneTelId">Enter your phone number</label>
+                <input type="tel" id="phoneTelId" name="phoneTelName" placeholder="+xx x.xx.xx.xx.xx"
+                    title="French number please" pattern="^(?:0|\(?\+33\)?\s?|0033\s?)[1-79](?:[\.\-\s]?\d\d){4}$">
+            </p>
+        </div>
+
+        <div class="explain">
+            <p>The input type <code>tel</code> will inherit all attributes from the generic <code>input</code> element.
+                In addition, you may use also:</p>
+            <dl>
+                <div>
+                    <dt>pattern</dt>
+                    <dd>regular expression against which the control's value is to be checked (optional)</dd>
+                </div>
+                <div>
+                    <dt>title</dt>
+                    <dd>gives description of the pattern (mandatory if <code>pattern</code> is used)</dd>
+                </div>
+            </dl>
+
+            <div class="tip">
+                <svg width="40" height="40">
+                    <use href="/assets/img/icons.svg#tip" /></svg>
+                <div class="content">
+                    <p>If you're using the <code>pattern</code> attribute, you should add a <code>title</code> attribute
+                        to give a description of the pattern.</p>
+                    <p>For pattern examples, check <a href="http://html5pattern.com/">HTML Pattern</a>.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- CODE SNIPPETS -->
+        <div class="snippets">
+            <div class="tabsContainer">
+                <ul class="buttons-bar">
+                    <li class="over active">
+                        <button id="tab03_01" aria-controls="tab03_01_content">HTML</button>
+                    </li>
+                    <li class="over">
+                        <button id="tab03_02" aria-controls="tab03_02_content">CSS</button>
+                    </li>
+                </ul>
+                <div class="content" aria-hidden="false" aria-labeledby="tab03_01" id="tab03_01_content">
+                    <div class="code">
+                        <!--?prettify lang=html linenums=true?-->
+                        <pre class="prettyprint linenums">
+                            <code>
+                                &lt!-- INPUT PHONE --&gt;
+                                &lt;p class="ui-input tel"&gt;
+                                    &lt;label for="phoneTelId"&gt;Enter your phone number&lt;/label&gt;
+                                    &lt;input type="tel" id="phoneTelId" name="phoneTelName" placeholder="+xx x.xx.xx.xx.xx"
+                                        title="French number please" pattern="^(?:0|\(?\+33\)?\s?|0033\s?)[1-79](?:[\.\-\s]?\d\d){4}$"&gt;
+                                &lt;/p&gt;
+                            </code>
+                        </pre>
+                    </div>
+                </div>
+                <div class="content" aria-hidden="true" aria-labeledby="tab03_02" id="tab03_02_content">
+                    <div _ngcontent-c18="" class="code">
+                        <pre _ngcontent-c18="" class="prettyprint linenums prettyprinted" style="">
+                            .toto &#123;
+                                color: #FFF;
+                            &#125;
+                        </pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- INPUT MAIL -->
+    <div class="descriptionComponent" id="input-mail">
+        <h3>E-mail Input</h3>
+        <div class="demo">
+            <!-- INPUT MAIL -->
+            <p class="ui-input mail">
+                <label for="mailId">Enter your e-mail adress</label>
+                <input type="email" id="mailId" name="mailName" placeholder="peter-parker@dailybugle.com">
+            </p>
+        </div>
+
+        <div class="explain">
+            <p>The input type <code>email</code> will inherit all attributes from the generic <code>input</code>
+                element.
+                In addition, you may use also:</p>
+            <dl>
+                <div>
+                    <dt>multiple</dt>
+                    <dd>If present, allows the user to enter more than one value (optional)</dd>
+                </div>
+            </dl>
+        </div>
+
+        <!-- CODE SNIPPETS -->
+        <div class="snippets">
+            <div class="tabsContainer">
+                <ul class="buttons-bar">
+                    <li class="over active">
+                        <button id="tab04_01" aria-controls="tab04_01_content">HTML</button>
+                    </li>
+                    <li class="over">
+                        <button id="tab04_02" aria-controls="tab04_02_content">CSS</button>
+                    </li>
+                </ul>
+                <div class="content" aria-hidden="false" aria-labeledby="tab04_01" id="tab04_01_content">
+                    <div class="code">
+                        <!--?prettify lang=html linenums=true?-->
+                        <pre class="prettyprint linenums">
+                            <code>
+                                &lt!-- INPUT MAIL --&gt;
+                                &lt;p class="ui-input mail"&gt;
+                                    &lt;label for="mailId"&gt;Enter your e-mail adress&lt;/label&gt;
+                                    &lt;input type="email" id="mailId" name="mailName" placeholder="peter-parker@dailybugle.com"&gt;
+                                &lt;/p&gt;
+                            </code>
+                        </pre>
+                    </div>
+                </div>
+                <div class="content" aria-hidden="true" aria-labeledby="tab04_02" id="tab04_02_content">
+                    <div _ngcontent-c18="" class="code">
+                        <pre _ngcontent-c18="" class="prettyprint linenums prettyprinted" style="">
+                            .toto &#123;
+                                color: #FFF;
+                            &#125;
+                        </pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- URL INPUT -->
+    <div class="descriptionComponent" id="input-url">
+        <h3>URL Input</h3>
+        <div class="demo">
+            <!-- URL INPUT -->
+            <p class="ui-input url">
+                <label for="myUrl">URL of your personal site</label>
+                <input type="url" id="myUrl" name="myUrl" placeholder="http://">
+            </p>
+        </div>
+
+        <div class="explain">
+            <p>The input type <code>url</code> will inherit all attributes from the generic <code>input</code> element.
+            </p>
+        </div>
+
+        <!-- CODE SNIPPETS -->
+        <div class="snippets">
+            <div class="tabsContainer">
+                <ul class="buttons-bar">
+                    <li class="over active">
+                        <button id="tab05_01" aria-controls="tab05_01_content">HTML</button>
+                    </li>
+                    <li class="over">
+                        <button id="tab05_02" aria-controls="tab05_02_content">CSS</button>
+                    </li>
+                </ul>
+                <div class="content" aria-hidden="false" aria-labeledby="tab05_01" id="tab05_01_content">
+                    <div class="code">
+                        <!--?prettify lang=html linenums=true?-->
+                        <pre class="prettyprint linenums">
+                            <code>
+                                &lt!-- URL INPUT --&gt;
+                                &lt;p class="ui-input url"&gt;
+                                    &lt;label for="myUrl"&gt;URL of your personal site&lt;/label&gt;
+                                    &lt;input type="url" id="myUrl" name="myUrl" placeholder="http://"&gt;
+                                &lt;/p&gt;
+                            </code>
+                        </pre>
+                    </div>
+                </div>
+                <div class="content" aria-hidden="true" aria-labeledby="tab05_02" id="tab05_02_content">
+                    <div _ngcontent-c18="" class="code">
+                        <pre _ngcontent-c18="" class="prettyprint linenums prettyprinted" style="">
+                            .toto &#123;
+                                color: #FFF;
+                            &#125;
+                        </pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- PASSWORD INPUT -->
+    <div class="descriptionComponent" id="input-password">
+        <h3>Password Input</h3>
+        <div class="demo">
+            <!-- PASSWORD INPUT -->
+            <p class="ui-input pwd">
+                <label for="myPwd">Password</label>
+                <input type="password" id="myPwd" name="myPwd" required>
+            </p>
+        </div>
+
+        <div class="explain">
+            <p>The input type <code>password</code> will inherit all attributes from the generic <code>input</code>
+                element.
+            </p>
+        </div>
+
+        <!-- CODE SNIPPETS -->
+        <div class="snippets">
+            <div class="tabsContainer">
+                <ul class="buttons-bar">
+                    <li class="over active">
+                        <button id="tab06_01" aria-controls="tab06_01_content">HTML</button>
+                    </li>
+                    <li class="over">
+                        <button id="tab06_02" aria-controls="tab06_02_content">CSS</button>
+                    </li>
+                </ul>
+                <div class="content" aria-hidden="false" aria-labeledby="tab06_01" id="tab06_01_content">
+                    <div class="code">
+                        <!--?prettify lang=html linenums=true?-->
+                        <pre class="prettyprint linenums">
+                            <code>
+                                &lt!-- PASSWORD INPUT --&gt;
+                                &lt;p class="ui-input pwd"&gt;
+                                    &lt;label for="myPwd"&gt;Password&lt;/label&gt;
+                                    &lt;input type="password" id="myPwd" name="myPwd" required&gt;
+                                &lt;/p&gt;
+                            </code>
+                        </pre>
+                    </div>
+                </div>
+                <div class="content" aria-hidden="true" aria-labeledby="tab06_02" id="tab06_02_content">
+                    <div _ngcontent-c18="" class="code">
+                        <pre _ngcontent-c18="" class="prettyprint linenums prettyprinted" style="">
+                            .toto &#123;
+                                color: #FFF;
+                            &#125;
+                        </pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ERROR MESSAGE -->
+    <div class="descriptionComponent" id="input-error-msg">
+        <h3>Contextual Error Message</h3>
+        <div class="demo">
+            <!-- INPUT ERROR MSG -->
+            <p class="error-msg">
+                <span>
+                    <svg style="width:24px;height:24px" viewBox="0 0 24 24">
+                        <path
+                            d="M13,13H11V7H13M13,17H11V15H13M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z" />
+                    </svg>
+                    The field is not correct
+                </span>
+            </p>
+            <p class="ui-input">
+                <label for="name1">Enter your name</label>
+                <input type="text" id="name1" name="name1" placeholder="oh, my!">
+            </p>
+        </div>
+
+        <div class="explain">
+            <p>Contextual Input Error Message.</p>
+            <div class="tip">
+                <svg width="40" height="40">
+                    <use href="/assets/img/icons.svg#tip" />
+                </svg>
+                <p>Always place error messages before the associated field, so it can be read by screen-readers before
+                    the field presenting the error.</p>
+            </div>
+        </div>
+
+        <!-- CODE SNIPPETS -->
+        <div class="snippets">
+            <div class="tabsContainer">
+                <ul class="buttons-bar">
+                    <li class="over active">
+                        <button id="tab07_01" aria-controls="tab07_01_content">HTML</button>
+                    </li>
+                    <li class="over">
+                        <button id="tab07_02" aria-controls="tab07_02_content">CSS</button>
+                    </li>
+                </ul>
+                <div class="content" aria-hidden="false" aria-labeledby="tab07_01" id="tab07_01_content">
+                    <div class="code">
+                        <!--?prettify lang=html linenums=true?-->
+                        <pre class="prettyprint linenums">
+                            <code>
+                                &lt!-- INPUT ERROR MSG --&gt;
+                                &lt;p class="error-msg"&gt;
+                                    &lt;svg style="width:24px;height:24px" viewBox="0 0 24 24"&gt;
+                                        &lt;path d="M13,13H11V7H13M13,17H11V15H13M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z" /&gt;
+                                    &lt;/svg&gt;
+                                    The field is not correct
+                                &lt;/p&gt;
+
+                                &lt!-- SIMPLE INPUT --&gt;
+                                &lt;p class="ui-input"&gt;
+                                    &lt;label for="aField"&gt;Enter your name&lt;/label&gt;
+                                    &lt;input type="text" id="aField" name="aField" placeholder="oh, my!"&gt;
+                                &lt;/p&gt;
+                            </code>
+                        </pre>
+                    </div>
+                </div>
+                <div class="content" aria-hidden="true" aria-labeledby="tab07_02" id="tab07_02_content">
+                    <div _ngcontent-c18="" class="code">
+                        <pre _ngcontent-c18="" class="prettyprint linenums prettyprinted" style="">
+                            .toto &#123;
+                                color: #FFF;
+                            &#125;
+                        </pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<p><a href="/">← Home</a></p>
+
+      </div>
+    </main>
+
+    <footer class="footerContent">
+      <p> CREAMLIB, <span>Open-Source © 2019</span>, Contributors : Thomas Robbe - Angela Ricci - Johan Bekasinski</p>
+    </footer>
+
+  </div>
+  <script type="text/javascript" src="/assets/js/main.js"></script>
+  <script type="text/javascript" src="/assets/js/prettify.js"></script>
+  <script type="text/javascript" src="/assets/js/classlist-polyfill-IE.js"></script>
+  <script type="text/javascript" src="/assets/js/librairie.js"></script>
+</body>
+
+
+</html>

@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CreamJS - Buttons &amp; Controls</title>
     <meta name="Description" content="This is the button component">
-    <link rel="stylesheet" href="/creamJS/assets/css/styles.css">
-    <link rel="stylesheet" href="/creamJS/assets/css/librairie.css">
+    <link rel="stylesheet" href="/assets/css/styles.css">
+    <link rel="stylesheet" href="/assets/css/librairie.css">
   </head>
 
 
@@ -15,15 +15,15 @@
 <header>
       <!-- Burger Button -->
       <button [ngClass]="{ burgerVertical: menuMobile, burgerHorizontal: !menuMobile }">
-        <img src="/creamJS/assets/img/burger.svg" alt="Mobile Button (Open Menu)" />
+        <img src="/assets/img/burger.svg" alt="Mobile Button (Open Menu)" />
       </button>
 
       <!-- Logo -->
       <h1>
-        <a href="/creamJS/" class="logo">
+        <a href="/" class="logo">
           <picture>
-            <source srcset="/creamJS/assets/img/creamJS-logo.svg" media="(min-width:1000px)" />
-            <img src="/creamJS/assets/img/creamNG-logo-sml.svg" alt="Cream-NG, your accessible Angular Lib" />
+            <source srcset="/assets/img/creamJS-logo.svg" media="(min-width:1000px)" />
+            <img src="/assets/img/creamNG-logo-sml.svg" alt="Cream-NG, your accessible Angular Lib" />
           </picture>
         </a>
       </h1>
@@ -35,7 +35,7 @@
             <button class="panel-heading" aria-expanded="false" aria-controls="sousMenuforms"
               id="itemMenuforms">
               <svg>
-                <use xlink:href="assets/img/icons.svg#forms"></use>
+                <use xlink:href="/assets/img/icons.svg#forms"></use>
               </svg>
               Form elements
             </button>
@@ -44,13 +44,22 @@
               aria-labeledby="itemMenuforms">
               <ul class="contenuMenu">
                 <li>
-                  <a href="/creamJS/components/forms/buttons/">Buttons &amp; Controls</a>
+                  <a href="/components/forms/buttons/">Buttons &amp; Controls</a>
                 </li>
                 <li>
-                  <a href="/creamJS/components/forms/checkboxes/">checkboxes component</a>
+                  <a href="/components/forms/datepicker/">datepicker component</a>
                 </li>
                 <li>
-                  <a href="/creamJS/components/forms/datepicker/">datepicker component</a>
+                  <a href="/components/forms/checkboxes/">checkboxes component</a>
+                </li>
+                <li>
+                  <a href="/components/forms/fieldset/">Fieldset Component</a>
+                </li>
+                <li>
+                  <a href="/components/forms/input/">Input Component</a>
+                </li>
+                <li>
+                  <a href="/components/forms/radio/">Radio Component</a>
                 </li></ul>
             </div>
 
@@ -59,7 +68,7 @@
             <button class="panel-heading" aria-expanded="false" aria-controls="sousMenunavigation"
               id="itemMenunavigation">
               <svg>
-                <use xlink:href="assets/img/icons.svg#navigation"></use>
+                <use xlink:href="/assets/img/icons.svg#navigation"></use>
               </svg>
               Navigation elements
             </button>
@@ -68,8 +77,38 @@
               aria-labeledby="itemMenunavigation">
               <ul class="contenuMenu">
                 <li>
-                  <a href="/creamJS/components/navigation/breadcrumbs/">Breadcrumbs component</a>
+                  <a href="/components/navigation/breadcrumbs/">Breadcrumbs component</a>
                 </li></ul>
+            </div>
+
+          </li><li class="menu-group closed">
+
+            <button class="panel-heading" aria-expanded="false" aria-controls="sousMenusvg5"
+              id="itemMenusvg5">
+              <svg>
+                <use xlink:href="/assets/img/icons.svg#svg5"></use>
+              </svg>
+              Utilities elements
+            </button>
+
+            <div class="panel-collapse" aria-hidden="true" id="sousMenusvg5"
+              aria-labeledby="itemMenusvg5">
+              <ul class="contenuMenu"></ul>
+            </div>
+
+          </li><li class="menu-group closed">
+
+            <button class="panel-heading" aria-expanded="false" aria-controls="sousMenusvg5"
+              id="itemMenusvg5">
+              <svg>
+                <use xlink:href="/assets/img/icons.svg#svg5"></use>
+              </svg>
+              Page structure
+            </button>
+
+            <div class="panel-collapse" aria-hidden="true" id="sousMenusvg5"
+              aria-labeledby="itemMenusvg5">
+              <ul class="contenuMenu"></ul>
             </div>
 
           </li></ul>
@@ -79,6 +118,7 @@
     <main>
       <div class="contentMain">
         <h2>Buttons &amp; Controls</h2>
+
 
 <!-- Component Page Title -->
 <div class="panelTitle">
@@ -90,6 +130,7 @@
     <li><a href="#button-submit">Submit</a></li>
   </ul>
 </div>
+
 <!-- Component Title -->
 <div class="titleComponent">
   <!-- NORMAL BUTTON -->
@@ -142,13 +183,16 @@
         <div class="content" aria-hidden="true" aria-labeledby="tab01_02" id="tab01_02_content">
           <div _ngcontent-c18="" class="code">
             <pre _ngcontent-c18="" class="prettyprint linenums prettyprinted" style="">
-              Code CSS
+              .toto &#123;
+                color: #FFF;
+              &#125;
             </pre>
           </div>
         </div>
       </div>
     </div>
   </div>
+
   <!-- ICONS BUTTONS -->
   <div class="descriptionComponent" id="button-icon">
     <h3>Icon Buttons</h3>
@@ -217,6 +261,7 @@
       </div>
     </div>
   </div>
+
   <!-- ICON ONLY BUTTONS -->
   <div class="descriptionComponent" id="button-icon-only">
     <h3>Buttons With Icons Only</h3>
@@ -271,6 +316,7 @@
       </div>
     </div>
   </div>
+
   <!-- UPLOAD BUTTON -->
   <div class="descriptionComponent" id="button-file">
     <h3>Upload Button</h3>
@@ -292,6 +338,7 @@
       </c3m-tab>
     </c3m-tabs>
   </div>
+
   <!-- SUBMIT BUTTON -->
   <div class="descriptionComponent" id="button-submit">
     <h3>Submit Button</h3>
@@ -318,7 +365,7 @@
   </div>
 </div>
 
-<p><a href="/creamJS/">← Home</a></p>
+<p><a href="/">← Home</a></p>
 
       </div>
     </main>
@@ -328,9 +375,10 @@
     </footer>
 
   </div>
-  <script type="text/javascript" src="/creamJS/assets/js/main.js"></script>
-  <script type="text/javascript" src="/creamJS/assets/js/prettify.js"></script>
-  <script type="text/javascript" src="/creamJS/assets/js/classlist-polyfill-IE.js"></script>
+  <script type="text/javascript" src="/assets/js/main.js"></script>
+  <script type="text/javascript" src="/assets/js/prettify.js"></script>
+  <script type="text/javascript" src="/assets/js/classlist-polyfill-IE.js"></script>
+  <script type="text/javascript" src="/assets/js/librairie.js"></script>
 </body>
 
 

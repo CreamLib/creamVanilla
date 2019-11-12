@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CreamJS - JavaScript library</title>
-    <meta name="Description" content="">
+    <title>CreamJS - Fieldset Component</title>
+    <meta name="Description" content="This is the fieldset component">
     <link rel="stylesheet" href="/assets/css/styles.css">
     <link rel="stylesheet" href="/assets/css/librairie.css">
   </head>
@@ -117,43 +117,75 @@
 
     <main>
       <div class="contentMain">
-        
-<div class="whyNgCream">
-  <p>Develop accessible applications with our vanilla JS components.</p>
-  <p>
-    <a href="#">Let's get started</a>
-  </p>
+        <h2>Fieldset Component</h2>
+
+
+<!-- Component Page Title -->
+<div class="panelTitle">
+    <ul>
+        <li><a href="#fieldset">Normal Fieldset</a></li>
+    </ul>
 </div>
-<ul class="ngCreamBecause">
-  <li><svg height="50" viewBox="0 0 24 24" width="200">
-      <use href="assets/img/icons.svg#htmIconSvg"></use>
-    </svg>
-    <h3>Embrace the Web</h3>
-    <p>Each component has been handcrafted with love, with a progressive enhancement approach that respects web
-      standards and <strong>semantics</strong>.</p>
-  </li>
-  <li><svg height="50" viewBox="0 0 24 24" width="200">
-      <use href="assets/img/icons.svg#gitIconSvg"></use>
-    </svg>
-    <h3>Fork &amp; Contribute</h3>
-    <p>All the components are <strong>open source</strong>. You can <strong><a
-          href="https://github.com/CreamLib/Angular_Code">fork us on Github</a></strong> and propose your own
-      components.</p>
-  </li>
-  <li><svg height="50" viewBox="0 0 24 24" width="200">
-      <use href="assets/img/icons.svg#responsiveIconSvg"></use>
-    </svg>
-    <h3>Be Responsive</h3>
-    <p>All components were designed to be fully <strong>responsive</strong> and multi-device.</p>
-  </li>
-  <li><svg height="50" viewBox="0 0 24 24" width="200">
-      <use href="assets/img/icons.svg#a11yIconSvg"></use>
-    </svg>
-    <h3>Accessibility</h3>
-    <p>We're doing our best to create the most accessible components.</p>
-  </li>
-</ul>
-      
+
+<!-- Component Title -->
+<div class="titleComponent">
+    <!-- NORMAL FIELDSET -->
+    <div class="descriptionComponent" id="fieldset">
+        <h3>Fieldset</h3>
+
+        <div class="explain">
+            <p>Fieldset must be a child of a <code>form</code> element. Use it to group fields of the same nature</p>
+
+            <div class="tip">
+                <svg width="40" height="40">
+                    <use href="/assets/img/icons.svg#tip" />
+                </svg>
+                <div class="content">
+                    <p>The <code>legend</code> element is mandatory for fieldsets.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="demo">
+            <fieldset class="ui-fieldset">
+                <legend>Fieldset</legend>
+                <p>This is the content of my fieldset</p>
+            </fieldset>
+        </div>
+
+        <div class="explain">
+            <dl>
+                <dt>legend</dt>
+                <dd>legend of the fieldset</dd>
+            </dl>
+        </div>
+
+        <div class="snippets">
+            <div class="tabsContainer">
+                <ul class="buttons-bar">
+                    <li class="over active">
+                        <button id="tab01_01" aria-controls="tab01_01_content">HTML</button>
+                    </li>
+                </ul>
+                <div class="content" aria-hidden="false" aria-labeledby="tab01_01" id="tab01_01_content">
+                    <div class="code">
+                        <!--?prettify lang=html linenums=true?-->
+                        <pre class="prettyprint linenums">
+                        <code>
+                            &lt;fieldset class="ui-fieldset"&gt;
+                                &lt;legend&gt;Fieldset&lt;/legend&gt;
+                                &lt;p&gt;This is the content of my fieldset&lt;/p&gt;
+                            &lt;fieldset&gt;
+                        </code>
+                        </pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<p><a href="/">← Home</a></p>
 
       </div>
     </main>
